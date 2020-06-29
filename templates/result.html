@@ -1,0 +1,48 @@
+<html>
+<head>
+<!--From https://codepen.io/frytyler/pen/EGdtg-->
+<title></title>
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/styles.css') }}">
+ <meta charset="UTF-8">
+ <title>ML API</title>
+<link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+  
+</head>	
+<body>
+
+	<header>
+		<div class="container">
+		<div id="brandname">
+			ML App
+		</div>
+		<h2>Predictions of Priority</h2>
+		
+	</div>
+	</header>
+	<p style="color:blue;font-size:20;text-align: center;"><b>Results for Caused by Incident</b></p>
+	<div class="results">
+
+
+		
+	{% if prediction == 1%}
+	<h2 style="color:red;">P1S1</h2>
+	{% elif prediction == 2%}
+	<h2 style="color:blue;">P1S2</h2>
+        {% elif prediction == 3%}
+        <h2 style="color:yellow;">P1S3</h2>
+        {% elif prediction == 4%}
+        <h2 style="color:white;">P2S1</h2>
+        {% elif prediction == 5%}
+        <h2 style="color:green;">P2S2</h2>
+        {% elif prediction == 0%}
+        <h2 style="color:black;">No Caused by Incident</h2>
+	{% endif %}
+
+	</div>
+
+</body>
+</html>

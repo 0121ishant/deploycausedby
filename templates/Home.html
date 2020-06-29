@@ -1,0 +1,80 @@
+<html>
+<!--From https://codepen.io/frytyler/pen/EGdtg-->
+<head>
+<meta charset="UTF-8">
+<title>ML API</title>
+<link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+
+<body>
+<h3> Caused by Incident </h3>
+<br>
+<form action="{{ url_for('predict')}}" method="POST">   
+<label for="cmdb_ci">Cmdb_ci</label>
+<select id="cmdb_ci" name="cmdb_ci">
+<option value="0">MS Windows Server</option>
+<option value="1">EY Canvas</option>
+<option value="2">Server</option>
+<option value="3">VMWare ESX Server</option>
+<option value="4">Servers</option>
+<option value="5">TTT Azure</option>
+<option value="6">IT Service Not Listed</option>
+<option value="7">Code Switch</option>
+<option value="8">Active Directory</option>
+<option value="9">FIDS</option>
+<option value="2">Linux</option> 
+</select>
+<br>
+<form action="{{ url_for('predict')}}" method="POST">      
+<label for="u_impacted_application">Impacted_application</label>
+<select id="u_impacted_application" name="u_impacted_application">
+<option value="0">MS Windows Server</option>
+<option value="1">EY Canvas</option>
+<option value="2">Server</option>
+<option value="3">VMWare ESX Server</option>
+<option value="4">Servers</option>
+<option value="5">TTT Azure</option>
+<option value="6">IT Service Not Listed</option>
+<option value="7">Code Switch</option>
+<option value="8">Active Directory</option>
+<option value="9">FIDS</option>
+<option value="10">Linux</option>
+</select>
+<br>
+<form action="{{ url_for('predict')}}" method="POST">          
+<label for="u_portfolio">Portfolio</label>
+<select id="u_portfolio" name="u_portfolio">
+<option value="0">IT Infrastructure</option>
+<option value="1">Assurance</option>
+<option value="2">Tax</option>
+<option value="3">IT Applications</option>
+<option value="4">Global Infrastructure Services</option>
+<option value="5">GHS</option>
+<option value="6">Mercury Programm</option>
+<option value="7">Information Security</option>
+<option value="8">Brand, Marketing&Communications</option>
+<option value="9">Cross Organization/Firm</option>
+<option value="10">Global Markets</option> 
+</select>
+<br>
+<form action="{{ url_for('predict')}}" method="POST">   
+<label for="u_environment">Environment</label>
+<select id="u_environment" name="u_environment">
+<option value="0">Production</option>
+<option value="1">Development</option>
+<option value="2">User Acceptance Testing</option>
+<option value="3">Quality Assurance</option>
+</select>
+<div class="ml-container">
+<p>Enter Your Description Here</p>
+<!-- <input type="text" name="Description"/> -->
+<textarea name="Description" rows="6" cols="50"></textarea>
+    
+<br/>
+<input type="submit" class="btn-info" value="predict">
+</form>
+</div>
